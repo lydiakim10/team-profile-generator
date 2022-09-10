@@ -1,7 +1,7 @@
 {
   "name": "team-profile-generator",
   "version": "1.0.0",
-  "description": "",
+  "description": "generating a team profile",
   "main": "index.js",
   "directories": {
       "lib": "lib"
@@ -11,10 +11,10 @@
   },
   "repository": {
       "type": "git",
-      "url": ""
+      "url": "git+https://github.com/lydiakim10/team-profile-generator.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Lydia Kim",
   "dependencies": {
       "inquirer": "^8.2.4",
       "jest": "^24.8.0"
