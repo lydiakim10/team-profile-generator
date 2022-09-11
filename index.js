@@ -5,7 +5,6 @@ const inquirer = require("inquirer");
 const manager = require("./lib/manager");
 const engineer = require("./lib/engineer");
 const intern = require("./lib/intern");
-const { showCompletionScript } = require("yargs");
 
 const team = [];
 
@@ -96,16 +95,28 @@ const newEmployee = () => {
             }
         },
         {
+            type: "input",
+            name: "email",
+            message: "What is the employee's email?",
+            validate: employeeEmail => {
+                if (employeeEmail) {
+                    return true;
+                } else {
+                    console.log("Please enter the employee's email!")
+                }
+            }
+        },
+        {
             type: "list",
-            name: "occupation",
+            name: "role",
             message: "What is the employee's role?",
-            choices: ["Engineer", "Intern"],
+            choices: ["Engineer", "Intern"]
         },
         {
             type: "input",
             name: "github",
-            message: "What is the engineer's username?",
-            when: (input) => input.occupation === "Engineer",
+            message: "What is the engineer's Github username?",
+            when: (input) => input.role === "Engineer",
             validate: engineerGithub => {
                 if (engineerGithub) {
                     return true;
@@ -116,9 +127,9 @@ const newEmployee = () => {
         },
         {
             type: "input",
-            message: "school",
+            name: "school",
             message: "What is the intern's school name?",
-            when: (input) => input.occupation === "Intern",
+            when: (input) => input.role === "Intern",
             validate: internSchool => {
                 if (internSchool) {
                     return true;
@@ -126,17 +137,31 @@ const newEmployee = () => {
                     console.log("Please enter the intern's school name!")
                 }
             }
+        },
+        {
+            type: "confirm",
+            name: "addMoreEmployees",
+            message: "Do you want to add more employees?",
+            default: false
         }
     ])
     .then (addEmployee => {
+        let {name, id, email, role, github, school, addMoreEmployees} = addEmployee;
+        let employeeEl;
         if (role === "Engineer") {
             employeeEl = new engineer (name, id, email, github);
-            console.log(engineerEl);
+            console.log(employeeEl);
         } else if (role === "Intern") {
             employeeEl = new intern (name, id, email, school);
-            console.log(internEl);
+            console.log(employeeEl);
         }
         team.push(employeeEl);
+
+        if (addMoreEmployees) {
+            return newEmployee(team);
+        } else {
+            return team;
+        }
     })
 };
 
@@ -144,6 +169,7 @@ const writeFile = data => {
     fs.writeFile("./dist/index.html", data, err => {
         if (err) {
             console.log(err);
+            return;
         } else {
             console.log("Success! The profile has been created!")
         }
@@ -155,3 +181,9 @@ newManager()
     .then(team => {
         return generateHTML(team);
     })
+    .then(newHTML => {
+        return writeFile(newHTML);
+    })
+    .catch(err => {
+        console.log(err);
+    });

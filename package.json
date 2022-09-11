@@ -4,19 +4,20 @@
   "description": "generating a team profile",
   "main": "index.js",
   "directories": {
-      "lib": "lib"
+    "lib": "lib"
   },
   "scripts": {
-      "test": "jest"
+    "test": "jest --color"
   },
   "repository": {
-      "type": "git",
-      "url": "git+https://github.com/lydiakim10/team-profile-generator.git"
+    "type": "git",
+    "url": "git+https://github.com/lydiakim10/team-profile-generator.git"
   },
   "keywords": [],
   "author": "Lydia Kim",
   "dependencies": {
-      "inquirer": "^8.2.4",
-      "jest": "^24.8.0"
+    "inquirer": "^8.2.4",
+    "jest": "^24.8.0",
+    "react-scripts": "^5.0.1"
   }
 }
