@@ -9,7 +9,10 @@ All profiles will show the name, role, ID, and email of the team. The unique cha
 
 A test folder is created and used with jest in order to test the Javascript application. A user can simply make sure that their code is working correctly by typing in "npm test" in their terminal. If the result of this says "pass" for all, then the code is working as designed. 
 
-## Videos
-![Gif](./videos/team-profile-generator.gif)
+## Website Screenshot
+![Website](./vids%26pic/full-website.png)
 
-[Video](./videos/team-profile-generator.webm)
+## Videos
+![Gif](./vids%26pic/team-profile-generator.gif)
+
+[Video](./vids%26pic/team-profile-generator.webm)
