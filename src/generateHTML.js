@@ -1,3 +1,4 @@
+// html set up for manager role
 const generateManager = function(manager) {
     return `
     <div class = "card col-md-3">
@@ -15,6 +16,7 @@ const generateManager = function(manager) {
 
 };
 
+// html setup for engineer role
 const generateEngineer = function(engineer) {
     return `
     <div class = "card col-md-3">
@@ -31,6 +33,7 @@ const generateEngineer = function(engineer) {
     `
 };
 
+// html setup for intern role
 const generateIntern = function(intern) {
     return `
     <div class = "card col-md-3">
@@ -47,6 +50,7 @@ const generateIntern = function(intern) {
     `
 };
 
+// generates each of the employee's cards through a for loop
 generateHTML = (data) => {
     teamPage = [];
 
@@ -72,6 +76,7 @@ generateHTML = (data) => {
     return teamGenerate;
 };
 
+// index.html added that inputs all of the employee's cards
 const generateTeams = function(employeesCards) {
     return `
     <!DOCTYPE html>

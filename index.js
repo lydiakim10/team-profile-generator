@@ -1,13 +1,16 @@
+// const to link generateHTML.js and node applications
 const generateHTML = require("./src/generateHTML");
 const fs = require("fs");
 const inquirer = require("inquirer");
 
+// const for each class role
 const manager = require("./lib/manager");
 const engineer = require("./lib/engineer");
 const intern = require("./lib/intern");
 
 const team = [];
 
+// questions for the manager role
 const newManager = () => {
     return inquirer.prompt ([
         {
@@ -59,6 +62,7 @@ const newManager = () => {
             }
         }
     ])
+    // adds manager into an array
     .then (addManager => {
         const {name, id, email, office} = addManager;
         const managerEl = new manager (name, id, email, office);
@@ -68,6 +72,7 @@ const newManager = () => {
     })
 };
 
+// questions for the employee role (engineer or intern)
 const newEmployee = () => {
     return inquirer.prompt ([
         {
@@ -112,6 +117,7 @@ const newEmployee = () => {
             message: "What is the employee's role?",
             choices: ["Engineer", "Intern"]
         },
+        // question only for engineer that adds github username
         {
             type: "input",
             name: "github",
@@ -125,6 +131,7 @@ const newEmployee = () => {
                 }
             }
         },
+        // question only for intern that adds school name
         {
             type: "input",
             name: "school",
@@ -138,6 +145,7 @@ const newEmployee = () => {
                 }
             }
         },
+        // allows user to add more employees 
         {
             type: "confirm",
             name: "addMoreEmployees",
@@ -145,6 +153,7 @@ const newEmployee = () => {
             default: false
         }
     ])
+    // adds the new employee with the proper information into the array
     .then (addEmployee => {
         let {name, id, email, role, github, school, addMoreEmployees} = addEmployee;
         let employeeEl;
@@ -165,6 +174,7 @@ const newEmployee = () => {
     })
 };
 
+// puts all the data into an index.html file and logs a success message
 const writeFile = data => {
     fs.writeFile("./dist/index.html", data, err => {
         if (err) {

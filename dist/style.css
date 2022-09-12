@@ -1,3 +1,4 @@
+/* header */
 header h1 {
     font-size: 50px;
     font-family:Georgia, 'Times New Roman', Times, serif;
@@ -7,10 +8,12 @@ header {
     margin-bottom: 100px;
 }
 
+/* body */
 body {
     background-color: antiquewhite;
 }
 
+/* employees cards */
 .card {
     margin: 10px;
     border: 2px solid black;

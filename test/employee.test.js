@@ -1,5 +1,6 @@
 const Employee = require("../lib/employee");
 
+// creates an employee profile
 describe("creating employee profile", () => {
     test("creating a new employee", () => {
         const employee = new Employee("Lydia Kim", 13, "lydiakim10@yahoo.com");
@@ -9,6 +10,7 @@ describe("creating employee profile", () => {
     })
 });
 
+// gets the employee name
 describe ("employee name", () => {
     test("get employee name", () => {
         const employee = new Employee("Lydia Kim", 13, "lydiakim10@yahoo.com");
@@ -16,6 +18,7 @@ describe ("employee name", () => {
     });
 });
 
+// gets the employee id
 describe ("employee id", () => {
     test("get employee id", () => {
         const employee = new Employee("Lydia Kim", 13, "lydiakim10@yahoo.com");
@@ -23,6 +26,7 @@ describe ("employee id", () => {
     });
 });
 
+// gets the employee email
 describe ("employee email", () => {
     test("get employee email", () => {
         const employee = new Employee("Lydia Kim", 13, "lydiakim10@yahoo.com");
@@ -30,6 +34,7 @@ describe ("employee email", () => {
     });
 });
 
+// gets the employee role
 describe ("employee role", () => {
     test("get employee role", () => {
         const employee = new Employee("Lydia Kim", 13, "lydiakim10@yahoo.com");

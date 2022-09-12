@@ -1,5 +1,6 @@
 const Intern = require("../lib/intern");
 
+// creates intern profile
 describe("creating intern profile", () => {
     test("creating a new intern", () => {
         const intern = new Intern("Lydia Kim", 13, "lydiakim10@yahoo.com", "Syracuse University");
@@ -10,6 +11,7 @@ describe("creating intern profile", () => {
     })
 });
 
+// gets intern name
 describe ("intern name", () => {
     test("get intern name", () => {
         const intern = new Intern("Lydia Kim", 13, "lydiakim10@yahoo.com", "lydiakim10");
@@ -17,6 +19,7 @@ describe ("intern name", () => {
     });
 });
 
+// gets intern id
 describe ("intern id", () => {
     test("get intern id", () => {
         const intern = new Intern("Lydia Kim", 13, "lydiakim10@yahoo.com", "lydiakim10");
@@ -24,6 +27,7 @@ describe ("intern id", () => {
     });
 });
 
+// gets intern email
 describe ("intern email", () => {
     test("get intern email", () => {
         const intern = new Intern("Lydia Kim", 13, "lydiakim10@yahoo.com", "lydiakim10");
@@ -31,6 +35,7 @@ describe ("intern email", () => {
     });
 });
 
+// gets intern school
 describe ("intern school", () => {
     test("get intern school", () => {
         const intern = new Intern("Lydia Kim", 13, "lydiakim10@yahoo.com", "lydiakim10");
@@ -38,6 +43,7 @@ describe ("intern school", () => {
     });
 });
 
+// gets intern role
 describe ("intern role", () => {
     test("get intern role", () => {
         const intern = new Intern("Lydia Kim", 13, "lydiakim10@yahoo.com", "lydiakim10");

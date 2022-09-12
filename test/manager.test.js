@@ -1,5 +1,6 @@
 const Manager = require("../lib/manager");
 
+// creates manager profile
 describe("creating manager profile", () => {
     test("creating a new intern", () => {
         const manager = new Manager("Lydia Kim", 13, "lydiakim10@yahoo.com", 1027);
@@ -10,6 +11,7 @@ describe("creating manager profile", () => {
     })
 });
 
+// gets manager name
 describe ("manager name", () => {
     test("get manager name", () => {
         const manager = new Manager("Lydia Kim", 13, "lydiakim10@yahoo.com", 1027);
@@ -17,6 +19,7 @@ describe ("manager name", () => {
     });
 });
 
+// gets manager id
 describe ("manager id", () => {
     test("get manager id", () => {
         const manager = new Manager("Lydia Kim", 13, "lydiakim10@yahoo.com", 1027);
@@ -24,6 +27,7 @@ describe ("manager id", () => {
     });
 });
 
+// gets manager email
 describe ("manager email", () => {
     test("get manager email", () => {
         const manager = new Manager("Lydia Kim", 13, "lydiakim10@yahoo.com", 1027);
@@ -31,6 +35,7 @@ describe ("manager email", () => {
     });
 });
 
+// gets manager office number
 describe ("manager office number", () => {
     test("get manager office number", () => {
         const manager = new Manager("Lydia Kim", 13, "lydiakim10@yahoo.com", 1027);
@@ -38,6 +43,7 @@ describe ("manager office number", () => {
     });
 });
 
+// gets manager role
 describe ("manager role", () => {
     test("get manager role", () => {
         const manager = new Manager("Lydia Kim", 13, "lydiakim10@yahoo.com", 1027);
